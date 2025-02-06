@@ -1,0 +1,88 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+
+public class T02 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtPrecio;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					T02 frame = new T02();
+					frame.setVisible(true);
+				} 
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public T02() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtPrecio = new JTextField();
+		txtPrecio.setBounds(80, 11, 86, 20);
+		contentPane.add(txtPrecio);
+		txtPrecio.setColumns(10);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 42, 404, 408);
+		contentPane.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+		
+		JButton btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setBounds(424, 43, 150, 23);
+		contentPane.add(btnAdicionar);
+		
+		JButton btnReemplazarUltimo = new JButton("Reemplazar último");
+		btnReemplazarUltimo.setBounds(424, 77, 150, 23);
+		contentPane.add(btnReemplazarUltimo);
+		
+		JButton btnReemplazarPrimero = new JButton("Reemplazar primero");
+		btnReemplazarPrimero.setBounds(424, 111, 150, 23);
+		contentPane.add(btnReemplazarPrimero);
+		
+		JButton btnReemplazarPrecio = new JButton("Reemplazar precio");
+		btnReemplazarPrecio.setBounds(424, 145, 150, 23);
+		contentPane.add(btnReemplazarPrecio);
+		
+		JButton btnEliminarUltimo = new JButton("Eliminar ultimo");
+		btnEliminarUltimo.setBounds(424, 179, 150, 23);
+		contentPane.add(btnEliminarUltimo);
+		
+		JButton btnOrdenarPrecio = new JButton("Ordenar precio");
+		btnOrdenarPrecio.setBounds(424, 213, 150, 23);
+		contentPane.add(btnOrdenarPrecio);
+		
+		JLabel lblNewLabel = new JLabel("Precio:");
+		lblNewLabel.setBounds(27, 14, 43, 14);
+		contentPane.add(lblNewLabel);
+	}
+}

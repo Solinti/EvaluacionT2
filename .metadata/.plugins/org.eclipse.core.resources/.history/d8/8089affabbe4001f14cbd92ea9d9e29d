@@ -1,0 +1,37 @@
+package pregunta_01;
+
+public class ArregloPrecios {
+	private double precio[]; 
+	private int indice; 
+	
+	public ArregloPrecios() { 
+		precio = new double[10]; 
+		indice = 0; 
+	}
+	
+	public int tamaño() { 
+		return indice; 
+	} 
+	
+	public double obtener(int p) { 
+		return precio[p]; 
+	} 
+	public void adicionar(double s) { 
+	if (indice == tamaño()) 
+	ampliarArreglo(); 
+	precio[indice] = s; 
+	indice++; 
+	} 
+	private void ampliarArreglo() { 
+	double aux[] = precio; 
+	precio = new double[indice + 10]; 
+	for (int i = 0; i < indice; i++) 
+	precio[i] = aux[i]; 
+	} 
+	public void eliminarTodo() { 
+	indice = 0; 
+	} 
+	public void eliminarFinal() { 
+	indice--; 
+	} 
+}
