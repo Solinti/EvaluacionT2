@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+H:\Cibertec\Algoritmos02\Evaluacion T2\T_02\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-572510209.index
-1113519460.index
